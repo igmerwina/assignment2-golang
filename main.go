@@ -15,8 +15,8 @@ func main() {
 	e.GET("/", services.Hello)
 	e.GET("/getall", services.GetAllOrder)
 	e.POST("/create", services.CreateOrder)
-	// e.PUT("/update", services.UpdateEmployee)
-	// e.DELETE("/:id", services.DeleteEmployee)
+	e.PUT("/update/:orderId", services.UpdateOrder)
+	e.DELETE("/delete/:orderId", services.DeleteOrder)
 
 	e.Logger.Fatal(e.Start(":8021"))
 }
