@@ -12,7 +12,9 @@ func main() {
 
 	e := echo.New()
 
-	e.GET("/", services.GetAllOrder)
+	// Route => handler
+	e.GET("/", services.Hello)
+	e.GET("/getall", services.GetAllOrder)
 	e.POST("/create", services.CreateOrder)
 	// e.PUT("/update", services.UpdateEmployee)
 	// e.DELETE("/:id", services.DeleteEmployee)

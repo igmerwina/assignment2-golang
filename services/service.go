@@ -10,13 +10,17 @@ import (
 	"gorestapi/model"
 )
 
+func Hello(c echo.Context) error {
+	return c.String(http.StatusOK, "Assignment 2 - IGM Erwin A\n")
+}
+
 func GetAllOrder(c echo.Context) error {
 	db := config.GetDB()
 
 	var order []model.Order
 	db.Preload("Items").Find(&order)
 
-	fmt.Println("GetOrderById")
+	fmt.Println("GetAllOrder")
 
 	return c.JSON(http.StatusOK, order)
 }
