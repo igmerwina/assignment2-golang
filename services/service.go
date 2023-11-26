@@ -20,9 +20,13 @@ func GetAllOrder(c echo.Context) error {
 	var order []model.Order
 	db.Preload("Items").Find(&order)
 
+	response := model.DataResponse{
+		Data: order,
+	}
+
 	fmt.Println("GetAllOrder")
 
-	return c.JSON(http.StatusOK, order)
+	return c.JSON(http.StatusOK, response)
 }
 
 func CreateOrder(c echo.Context) error {

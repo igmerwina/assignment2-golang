@@ -12,7 +12,6 @@ func main() {
 
 	e := echo.New()
 
-	// Route => handler
 	e.GET("/", services.Hello)
 	e.GET("/getall", services.GetAllOrder)
 	e.POST("/create", services.CreateOrder)
